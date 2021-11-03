@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script>
+        function loadXMLDocln()
+{   var xmlhttp;
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp=new XMLHttpRequest(); }
+    else {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); }
+    xmlhttp.onreadystatechange=function()
+    {   if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {   document.getElementById("textres").innerHTML=xmlhttp.responseText; }}
+    xmlhttp.open("GET","1.txt",true);
+    xmlhttp.send();}
+
+    function loadXMLDoclv()
+{   var xmlhttp;
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp=new XMLHttpRequest(); }
+    else {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP"); }
+    xmlhttp.onreadystatechange=function()
+    {   if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {   document.getElementById("textres2").innerHTML=xmlhttp.responseText; }}
+    xmlhttp.open("GET","2.txt",true);
+    xmlhttp.send();}
+
+    </script>
+    <style>
+        .bodywrap {
+            margin-top: 50px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .button {
+            width: 90px;
+            height: 25px;
+            padding-left: 8px;
+            border-radius: 6px;
+            outline: none;
+            background-color: rgb(119, 140, 185);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h3>Лабораторна робота 8</h3>
+    </center>
+
+<div class="bodywrap">
+    <button type="button" class="button" onclick="loadXMLDocln()">Львів</button>
+    <p id="textres"></p>
+    <button type="button" class="button" onclick="loadXMLDoclv()">ЛНУ</button>
+    <p id="textres2"></p>
+</div>
+
+
+
+</body>
+
+</html>
